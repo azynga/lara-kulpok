@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    justify-content: space-around;
+    background-color: blueviolet;
+}
+
+ul {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: aqua;
+}
+
+li {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background-color: brown;
+}
+
+h1 {
+    font-family: sans-serif;
+    background-color: chartreuse;
+}
+
+nav {
+    background-color: darkcyan;
+    display: flex;
+    flex-grow: 1;
+}
