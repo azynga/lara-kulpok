@@ -9,6 +9,7 @@ html {
 
 body {
     background-color: hsl(40, 20%, 95%);
+    /*background: linear-gradient(hsl(40, 20%, 95%) 40%, hsl(40, 70%, 40%));*/
     font-family: Raleway, sans-serif;
     color: hsl(40, 20%, 15%);
     margin: 0;
@@ -21,18 +22,16 @@ body {
 #header {
     display: flex;
     justify-content: space-evenly;
-    top: 0px;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 15vh;
-    max-height: 100px;
-    min-height: 40px;
-    background-color: rgba(255, 255, 255, 0.9);
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.85);
     z-index: 1;
-    box-shadow: 0 0 10px 0 hsl(40, 20%, 57%);
+    box-shadow: 0 5px 8px -4px hsl(40, 10%, 25%);
     backdrop-filter: blur(5px);
     position: sticky;
-    margin: 40vh 0 0 0;
+    margin: calc(50vh - 40px) 0 0 0;
 }
 
 #title {
@@ -43,10 +42,10 @@ body {
 h1 {
     font-family: juliette;
     line-height: 0px;
-    font-size: 80px;
+    font-size: 62px;
     max-height: 90%;
     position: relative;
-    top: 10px;
+    top: 4px;
     text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.7);
 }
 
@@ -94,75 +93,67 @@ section {
     flex-direction: column;
     margin: 0;
     transition: all 1.5s;
-    padding: 4vh 20vw;
-}
-
-section:hover h2 {
-    width: 100%;
-    background-color: hsl(40, 20%, 15%);
-    color: hsl(40, 20%, 95%);
-}
-
-#welcome {
-    height: 100vh;
-    width: 100vw;
-    background-color: gray;
-    margin: 0;
-    margin-top: -55vh;
-    padding: 0;
-    background-image: url(./images/001.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-}
-
-#welcome img {
-    transform: translate3d(0, 0, 0);
-    object-fit: cover;
-    animation-name: kenburns;
-    animation-duration: 10s;
-    animation-delay: 2s;
-    animation-iteration-count: infinite;
-    animation-fill-mode: forwards;
-    animation-direction: normal;
-    position: relative;
-    will-change: transform;
-}
-
-@keyframes kenburns{
-    0% {
-        transform-origin: bottom left;
-        transform: scale(1.0);
-    }
-
-    100% {
-        transform: scale(1.1);
-        
-    }
+    padding: 120px 20vw;
 }
 
 h2 {
     display: inline;
     border-top: solid 3px hsl(40, 20%, 75%);
     z-index: 0;
-    transition: background-color 0.5s, color 0.5s, width 0.4s 0.4s;
+    transition: background-color 0.5s, color 0.5s, width 0.4s 0.5s;
     margin-bottom: 8vh;
     letter-spacing: 10px;
-    text-indent: 1em;
-    width: 70%;
+    text-align: center;
+    width: 20vw;
     min-width: 300px;
     align-self: center;
 }
 
-.gallery {
-    margin: -4vh -2vw;
-    width: 100%+2vh;
+section:hover h2 {
+    display: block;
+    width: 90vw;
+    background-color: hsl(40, 20%, 15%);
+    color: hsl(40, 20%, 95%);
+}
+
+#welcome {
+    height: 100vh;
+    background-color: hsl(40, 10%, 5%);
+    margin: 0;
+    margin-top: calc(-1 * (80px + (50vh - 40px)));
+    padding: 0;
+    overflow: hidden;
+}
+
+#welcome img {
+    transform: translate3d(0, 0, 0);
+    object-fit: cover;
+    position: relative;
+    will-change: transform;
+    transition: transform 8.5s ease-in-out 1.5s;
+}
+
+#work {
+    box-sizing: border-box;
+    /*height: calc(100vh + 80px);*/
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    /*background-color: hsl(40, 10%, 5%);*/
+}
+
+/*
+#carousel {
+    background-color: gray;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
-.gallery-item {
+.carousel-item {
     margin: 4vh 2vw;
     display: inline-flex;
     justify-content: center;
@@ -170,19 +161,73 @@ h2 {
     flex-grow: 1;
     max-width: 400px;
     background-color: white;
-    transition: all 0.5s;
 }
 
-.gallery-item img {
+.carousel-item img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
 }
+*/
 
-.gallery-item:hover {
-    transform: scale(1.03);
-    box-shadow: 0 5px 15px -5px hsl(40, 20%, 67%);
+#carousel {
+    margin: 0;
+    height: 70vh;
+    width: 100%;
+    background-color: hsl(40, 10%, 5%);
+    padding: 20px 0;
 }
+
+.carousel-item {
+    height: 70vh;
+    width: fit-content;
+    display: flex;
+    margin: 0 5px;
+}
+
+.carousel-item img {
+    height: 70vh;
+    object-fit: contain;
+    justify-self: center;
+    transition: all 0.5s;
+    border: solid 2px hsl(40, 20%, 75%);
+    box-sizing: border-box;
+}
+
+.controls {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    top: -70vh;
+}
+
+.glider-prev, .glider-next {
+    position: relative !important;
+    left: 0 !important;
+    padding: 30vh 15vw !important;
+    box-sizing: border-box !important;
+}
+
+.glider-prev {
+    padding-left: 5vw !important;
+    padding-right: 35vw !important;
+}
+
+.glider-next {
+    padding-left: 35vw !important;
+    padding-right: 5vw !important;
+}
+
+/*
+.carousel-item:hover {
+    transform: scale(1.03);
+    
+}
+
+.carousel-item:hover img {
+    transform: scale(1.03);
+}
+*/
 
 #video {
     align-self: center;
