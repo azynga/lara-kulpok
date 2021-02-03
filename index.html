@@ -80,8 +80,8 @@
         <section id="process">
             <h2>the process</h2>
             
-            <div id="process-text">
-                <div id="how">
+            <div class="textbox-container">
+                <div id="how" class="textbox">
                     <h3>how?</h3>
                     <p>This is a paragraph describing the process of creating those paintings. It can be some artsy
                         bullshit or just a technical explanation. To make this paragraph look a bit longer, I'm just
@@ -93,7 +93,7 @@
                         technical explanation. To make this paragraph look a bit longer, I'm just gonna add some words
                         that don't really make any sense. But, you know, what are ya gonna do? It is what it is.</p>
                 </div>
-                <div id="why">
+                <div id="why" class="textbox">
                     <h3>why?</h3>
                     <p>Let's have a second paragraph. I wanna add some extra words, just so the shape of the paragraph
                         looks a bit different from the one above. Just for fun, you know. See how they behave on the
@@ -108,11 +108,14 @@
 
         <section id="person">
             <h2>the person</h2>
-            <div id="person-content">
-                <img id="portrait"
+
+            <div class="textbox-container">
+                <div id="portrait" class="textbox">
+                <!--<img id="portrait" class="textbox"
                     src="https://instagram.ftxl2-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/p750x750/42849475_312743419507632_3286723953101526760_n.jpg?_nc_ht=instagram.ftxl2-1.fna.fbcdn.net&_nc_cat=100&_nc_ohc=u42QBvbM_70AX8Fs_UH&tp=1&oh=d35f69dec124fb9e2ce7e7966a62397c&oe=603CA700"
-                    alt="a photo of the artist">
-                <div id="person-text">
+                    alt="a photo of the artist">-->
+                </div>
+                <div class="textbox">
                     <h3>who?</h3>
                     <p>Here, the artist can describe herself, her life and her ideas. Maybe we can also add some kind of
                         a CV with more information about her. Placeholder text for the win!</p>
@@ -130,29 +133,31 @@
 
         <section id="contact">
             <h2>get in touch</h2>
-            <form id="form" action="https://www.freecodecamp.com/email-submit">
-                <fieldset>
-                    <legend>Leave me a message and I'll write you back</legend>
-                    <div class="form-unit">
-                        <label for="name">your name</label>
-                        <input id="name" type="text" placeholder="name" name="email" required>
-                    </div>
+            <div class="textbox-container">
+                <form id="form" class="textbox" action="https://www.freecodecamp.com/email-submit">
+                    <fieldset>
+                        <legend>Leave me a message and I'll write you back</legend>
+                        <div class="form-unit">
+                            <label for="name">your name</label>
+                            <input id="name" type="text" placeholder="name" name="email" required>
+                        </div>
 
-                    <div class="form-unit">
-                        <label for="email">your email</label>
-                        <input id="email" type="email" placeholder="email" name="email" required>
-                    </div>
+                        <div class="form-unit">
+                            <label for="email">your email</label>
+                            <input id="email" type="email" placeholder="email" name="email" required>
+                        </div>
 
-                    <div class="form-unit">
-                        <label for="message">your message</label>
-                        <textarea id="message" placeholder="message" required></textarea>
-                    </div>
+                        <div class="form-unit">
+                            <label for="message">your message</label>
+                            <textarea id="message" placeholder="message" required></textarea>
+                        </div>
 
-                    <div class="form-unit">
-                        <input id="submit" type="submit" value="submit">
-                    </div>
-                </fieldset>
-            </form>
+                        <div class="form-unit">
+                            <input id="submit" type="submit" value="submit">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
         </section>
 
     </main>

@@ -13,7 +13,7 @@ html {
 }
 
 body {
-    background-color: hsl(40, 10%, 5%);
+    background-color: hsl(40, 10%, 85%);
     font-family: Raleway, sans-serif;
     color: hsl(40, 20%, 15%);
     margin: 0;
@@ -30,9 +30,9 @@ body {
     left: 0;
     width: 100%;
     height: 80px;
-    background-color: hsla(40, 20%, 95%, 0.85);
-    z-index: 1;
-    box-shadow: 0 5px 8px -4px hsl(40, 10%, 25%);
+    background-color: hsla(40, 20%, 87%, 0.9);
+    z-index: 2;
+    box-shadow: 0 18px 25px -5px hsla(40, 10%, 15%, 0.8);
     backdrop-filter: blur(5px);
     position: sticky;
     margin: calc(50vh - 40px) 0 0 0;
@@ -91,16 +91,17 @@ h1 {
 }
 
 section {
+    min-height: (100vh - 80px);
     display: flex;
     flex-direction: column;
     margin: 0;
     transition: all 1.5s;
-    padding: 120px 20vw;
+    padding: 120px 0;
 }
 
 h2 {
     /*border-top: solid 3px hsl(40, 20%, 55%);*/
-    z-index: 0;
+    z-index: 1;
     transition: all 0.5s;
     margin-bottom: 8vh;
     letter-spacing: 15px;
@@ -154,7 +155,6 @@ section:hover h2 {
     justify-content: center;
     overflow: hidden;
     position: relative;
-    background-color: hsl(40, 10%, 5%);
 }
 
 #carousel {
@@ -215,33 +215,48 @@ section:hover h2 {
 }
 
 #process {
-    background-color: hsl(40, 20%, 75%);
+    /*background-color: hsl(40, 20%, 75%);*/
+    margin: 0;
+    padding: 120px 0;
 }
 
-#process-text {
+.textbox-container {
+    width: 100%;
     display: flex;
-    justify-content: space-evenly;
-    margin: 0 10vw;
+    justify-content: center;
+    margin: 0;
     line-height: 25px;
     font-size: 0.9rem;
     hyphens: auto;
-    flex-direction: column;
     align-items: center;
+    background-color: hsl(40, 4%, 10%);
+    overflow: hidden;
 }
 
-#process-text div {
-    width: 70%;
-    margin: 4vh 2vw;
-    padding: 2vh 2vw;
-    text-align: justify;
-    background-color: white;
+.textbox {
+    height: 70vh;
+    width: 55vh;
+    min-width: 450px;
+    box-sizing: border-box;
+    margin: 0 40px;
+    padding: 20px 40px;
+    background-color: hsl(40, 20%, 85%);
     transition: all 0.5s;
+    box-shadow: /*0 0 60px 40px hsl(40deg 20% 5%),*/
+                0 0 40px -12px hsl(40deg 20% 5%) inset;
+    /*font-family: gabriele;*/
 }
 
-#process-text div:hover {
-    transform: scale(1.03);
-    box-shadow: 0 5px 15px -5px hsl(40, 20%, 67%);
+.textbox ul {
+    padding-inline-start: 1em;
 }
+
+
+.textbox:hover {
+    transform: scale(1.03);
+
+}
+
 
 @media (max-width: 1200px) {
     #process-text {
@@ -267,45 +282,16 @@ section:hover h2 {
     flex-wrap: wrap;
 }
 
-#person-text {
-    max-width: 40%;
-    margin: 0 0 0 2vw;
-    padding: 2vh 2vw;
-    text-align: justify;
-    background-color: white;
-    transition: all 0.5s;
-    line-height: 25px;
-    font-size: 0.9rem;
-    hyphens: auto;
-}
-
-#person-text:hover {
-    transform: scale(1.03);
-    box-shadow: 0 5px 15px -5px hsl(40, 20%, 67%);
-}
-
 #portrait {
-    box-sizing: border-box;
-    max-width: 40%;
-    margin: 0 2vw 0 0;
-    transition: all 0.5s;
+    background: url("https://instagram.ftxl2-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/p750x750/42849475_312743419507632_3286723953101526760_n.jpg?_nc_ht=instagram.ftxl2-1.fna.fbcdn.net&_nc_cat=100&_nc_ohc=u42QBvbM_70AX8Fs_UH&tp=1&oh=d35f69dec124fb9e2ce7e7966a62397c&oe=603CA700");
+    background-size: cover;
     object-fit: cover;
-}
-
-#portrait:hover {
-    transform: scale(1.03);
-    box-shadow: 0 5px 15px -5px hsl(40, 20%, 67%);
-}
-
-#contact {
-    background-color: hsl(40, 20%, 75%);
+    padding: 0;
 }
 
 #form {
-    align-self: center;
-    width: 30%;
-    line-height: 25px;
-    font-size: 0.9rem;
+    display:flex;
+    align-items: center;
 }
 
 #form fieldset {
@@ -320,10 +306,15 @@ section:hover h2 {
     margin: 3vh;
 }
 
+textarea {
+    height: 8em;
+}
+
 textarea,
 input {
     font-family: Raleway, sans-serif;
     border: solid 1px hsl(40, 20%, 45%);
     resize: none;
     outline: none;
+    background-color: hsl(40, 20%, 95%);;
 }
